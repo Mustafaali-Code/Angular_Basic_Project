@@ -1,0 +1,10 @@
+<div *ngIf="open" (click)="close()" class="overlay">
+    <div class="popup">
+        <div class="popup-content">
+            <h5 class="mt-4 pt-2">{{title}}</h5>
+            <p>{{body}}</p>
+            <button class="mt-1 btn btn-primary" (click)="deleteItem()">Yes, Delete</button>
+            <button class="mx-2 btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

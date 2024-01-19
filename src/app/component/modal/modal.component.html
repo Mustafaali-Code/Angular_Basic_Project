@@ -1,0 +1,11 @@
+<div *ngIf="open" (click)="close()" class="overlay">
+    <div class="popup">
+        <div class="popup-content">
+            <h4 class="mt-3">{{user.name}}</h4>
+            <h6 class="">Gender : <span>{{user.gender| titlecase}}</span></h6>
+            <h6 class="">Fees : <span>{{user.fee | currency:'USD':'symbol':'1.2-2'}}</span></h6>
+            <h6 class="">D-Birth : <span>{{user.date | date}}</span></h6>
+            <button class="mt-1 btn btn-primary" (click)="Ok()">OK</button>
+        </div>
+    </div>
+</div>

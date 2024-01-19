@@ -1,0 +1,22 @@
+<h3 class="text-center">About / Employees</h3>
+
+
+<div class="text-center my-3 mb-5">
+    <button (click)="onSufiyan()" class="btn btn-success">Sufiyan</button>
+    <button (click)="onTahir()" class="btn btn-success mx-2">Tahir</button>
+    <button (click)="onHamza()" class="btn btn-success">Hamza</button>
+</div>
+<div [ngSwitch]="tab">
+    <div *ngSwitchCase="'Tahir'" class="text-center">
+        <h5>Tahir</h5>
+        <p>My name is Tahir</p>
+    </div>
+    <div *ngSwitchDefault="'Sufiyan'" class="text-center">
+        <h5>Sufiyan</h5>
+        <p>My name is Sufiyan</p>
+    </div>
+    <div *ngSwitchCase="'Hamza'" class="text-center">
+        <h5>Hamza</h5>
+        <p>My name is Hamza</p>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent-container input {
+  width: 40vh;
+}
+
+.parent-container input::placeholder {
+  color: black;
+  font-style: italic;
+}
+
+.form_container {
+  padding: 20px;
+  align-items: center;
+  box-shadow: 16px 14px 20px #0000088c;
+  border-radius: 10px;
+
+}
+.my_btn {
+  background-color: black;
+  color: white;
+}
+
+input.ng-invalid.ng-touched {
+  border: #FF0000 2px solid !important;
+}
+
+small{
+  color: red;
+  /* font-weight: bold; */
+}
+.input_div{
+ display: flex;
+ flex-direction: column;
+}
+.deleteSkill{
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 20px;
+  position:absolute;
+  right: -10px;
+  top:-10px;
+  line-height: 5px;
+}
+
+.input_div_cont{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}

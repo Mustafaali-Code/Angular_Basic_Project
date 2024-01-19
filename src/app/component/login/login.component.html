@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center align-item-center">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"  class=" mt-5 login" >
+        <h2 class="text-center my-2">Login</h2>
+        <input formControlName="email" placeholder="Enter the email" type="email">
+        <br>
+        <input formControlName="password" class="my-4" placeholder="Enter the Pasword" type="password">
+        <br>
+        <button type="submit" class="mx-auto btn btn-success">Login</button>
+    </form>
+</div>

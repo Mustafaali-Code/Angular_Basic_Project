@@ -1,0 +1,5 @@
+<ul style="list-style: none;" *ngFor="let pro of item; index as i" class="mt-3 text-center">
+    <li>{{pro}} <button (click)="delete(i)" class="btn mx-3 btn-danger">x</button>
+        <button class="btn btn-primary" (click)="editText(pro,i)">edit</button>
+    </li>
+</ul>

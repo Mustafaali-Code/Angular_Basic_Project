@@ -1,0 +1,15 @@
+.btn_sub{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 4px;
+    width: 16vh;
+    height: 35px;
+    background-color: #748cab;
+    border: none;
+    color: white;
+    position: absolute;
+    right: 30px;
+}
+.active{
+    font-weight: bolder;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+    <filter [editdata]="editdata" (addText)="adders($event)"></filter>
+    <app-listing (deleteItem)="delete($event)" (edit)="editText($event)" [item]="data"></app-listing>
+
+    <!-- <div class="card"> -->
+    <div class="image-container">
+        <img [src]="product.image">
+    </div>
+    <h5>Name : {{product.name}}</h5>
+    <h6>Price : {{product.price}}</h6>
+    <h6>Color : {{product.color}}</h6>
+    <h6 [ngClass]="{red:count == product.inStock}">Available : {{product.inStock}}</h6>
+    <h6 [ngStyle]="{color:getDiscount() > 50000?'green':'red'}">Discount : {{getDiscount()}}</h6>
+    <button *ngIf="display" (click)="buy()" class="btn btn-primary mb-2">Buy</button>
+    <br>
+    <div *ngIf="!display">
+        <button (click)="decrease()" class="btn btn-primary">-</button>
+        <span class="mx-3">{{count}}</span>
+        <button (click)="increase()" class="btn btn-primary">+</button>
+    </div>
+    <!-- </div> -->
+</div>
+
+<!-- Toggle Start -->
+<ng-container *ngIf="toggle; else toggleoff">
+    <h5>Toggle is On</h5>
+</ng-container>
+
+<ng-template #toggleoff>
+    <h5>Toggle is Off</h5>
+</ng-template>
+<button class="btn btn-primary" (click)="Toggle()">Toggle {{toggle?"off":"on"}}</button>
+<!-- Toggle End -->
+
+<!-- this is the one way of binding start -->
+
+<!-- <input (input)="onNameChange($event)">
+<p>{{text}}</p> -->
+
+<!-- this is the one way of binding end -->
+
+
+<!-- this is the two way of binding start -->
+
+<!-- <input [(ngModel)]="text" (input)="onNameChange($event)"> 
+<p>{{text}}</p> -->
+
+<!-- this is the two way of binding end -->
+<br>

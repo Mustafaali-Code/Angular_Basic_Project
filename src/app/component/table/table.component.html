@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="d-flex mt-5 py-2 mx-2 justify-content-between">
+        <h3 class="">Student Management</h3>
+        <select [(ngModel)]="selector" class="p-0 px-5">
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <p class="">Total Student : {{totalStudent | async}}</p>
+    </div>
+
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Date</th>
+                <th scope="col">Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr (click)="showData(user)" *ngFor="let user of data | filterGender: selector ; index as i">
+                <th>{{i+1}}</th>
+                <td>{{user.name }}</td>
+                <td>{{user.gender| titlecase }}</td>
+                <td>{{user.date | date }}</td>
+                <td>{{user.fee | currency:'USD':'symbol':'1.2-2'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-modal [open]="open" [user]="showUser" (closed)="closeModal($event)"></app-modal>

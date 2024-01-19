@@ -1,0 +1,24 @@
+.card {
+    color: aliceblue;
+    background-color: rgba(3, 3, 21, 0.549);
+    box-shadow: 16px 14px 20px #0000088c;
+    width: 38vh;
+    height: auto;
+    border: 1px solid #6D6D6D;
+  }
+
+  .btn_sub{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 4px;
+    width: 16vh;
+    height: 35px;
+    background-color: #748cab;
+    border: none;
+    color: white;
+}
+.btn_container{
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+}

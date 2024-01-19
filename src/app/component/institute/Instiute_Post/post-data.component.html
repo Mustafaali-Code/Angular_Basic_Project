@@ -1,0 +1,120 @@
+<!-- <div class="parent-container" *ngIf="!editCheck">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form_container mt-5" >
+        <h3 class="text-center mb-4">Post Institute</h3>
+        <input placeholder="Enter Institute Name" type="text" formControlName="name" />
+        <br />
+        <input placeholder="Enter Tel / Phone" type="number" formControlName="tel" />
+        <br />
+        <input placeholder="Enter Address" type="text" formControlName="address" />
+        <br />
+        <input placeholder="Enter Short Name" type="text" formControlName="shortName" />
+        <br />
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn my_btn px-5">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="parent-container" *ngIf="editCheck">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form_container mt-5" >
+        <h3 class="text-center mb-4">Edit Institute</h3>
+        <input placeholder="Enter Institute Name" type="text" formControlName="name" />
+        <br />
+        <input placeholder="Enter Tel / Phone" type="number" formControlName="tel" />
+        <br />
+        <input placeholder="Enter Address" type="text" formControlName="address" />
+        <br />
+        <input placeholder="Enter Short Name" type="text" formControlName="shortName" />
+        <br />
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn my_btn px-5">Edit</button>
+        </div>
+    </form>
+</div> -->
+
+<!-- 
+
+<div class="parent-container">
+    <form [formGroup]="myForm" #formValid="ngForm" (ngSubmit)="onSubmit()" class="form_container mt-5">
+        <h3 class="text-center mb-4">Post Institute</h3>
+        <div class="input_div">
+            <input required placeholder="Enter Institute Name" type="text" formControlName="name" />
+            <input required placeholder="Enter Tel / Phone" type="number" formControlName="tel" />
+            <input required placeholder="Enter Address" type="text" formControlName="address" />
+            <input required placeholder="Enter Short Name" type="text" formControlName="shortName" />
+            <div class="d-flex justify-content-center">
+                <button type="submit" [disabled]="formValid.invalid" class="btn my_btn px-5">Submit</button>
+            </div>
+        </div>
+    </form>
+</div> -->
+
+
+<div class="parent-container">
+    <form [formGroup]="myForm" #formValid="ngForm" (ngSubmit)="onSubmit()" class="form_container mt-5">
+        <h3 class="text-center mb-4">Post Institute</h3>
+        <div class="input_div">
+            <div class="mb-3 input_div">
+                <input required placeholder="Enter Institute Name" type="text" formControlName="name"
+                    class="my-input " />
+                <small *ngIf="myForm.get('name').invalid && myForm.get('name').touched"
+                    class="error-text text-center mt-1">Institute Name is required</small>
+            </div>
+            <div class="mb-3 input_div">
+
+                <input required placeholder="Enter Tel / Phone" type="number" formControlName="tel" class="my-input" />
+                <small *ngIf="myForm.get('tel').invalid && myForm.get('tel').touched"
+                    class="error-text text-center mt-1">Tel / Phone is required</small>
+            </div>
+
+            <div class="mb-3 input_div">
+                <input required placeholder="Enter Address" type="text" formControlName="address" class="my-input" />
+                <small *ngIf="myForm.get('address').invalid && myForm.get('address').touched"
+                    class="error-text text-center mt-1">Address is required</small>
+            </div>
+
+            <!-- If the form object other some i=one object details => name input method same but error msg change -->
+            <!-- <small *ngIf="myForm.get('shortName').invalid && myForm.get('details.shortName / etc').touched"
+            class="error-text text-center mt-1">Short Name is required</small> -->
+            <div class="mb-3 input_div">
+                <input required placeholder="Enter Short Name" type="text" formControlName="shortName"
+                    class="my-input" />
+                <small *ngIf="myForm.get('shortName').invalid && myForm.get('shortName').touched"
+                    class="error-text text-center mt-1">Short Name is required</small>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="mb-3 input_div_cont " *ngFor="let control of myForm.get('skill')['controls'] let i = index"
+                formArrayName="skill">
+                <input type="text" class="my-input mb-1" required placeholder="Enter Skill " type="text"
+                    [formControl]="control">
+                    <button (click)="deleteSkill(i)" class="btn-danger deleteSkill">x</button>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+                <button (click)="addSkill()" [disabled]="myForm.get('skill').invalid"
+                    class="btn btn-success">Add</button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" [disabled]="formValid.invalid" class="btn my_btn px-5">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

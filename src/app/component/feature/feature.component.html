@@ -1,0 +1,26 @@
+<h3 class="text-center">Features</h3>
+<div class='container main mx-auto'>
+    <div class="d-flex justify-content-end p-3">
+        <button class="cart_btn" (click)="click()"> Cart <img width="25"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr4d9yL-eXm9KUXtwmM7oP5HM1girkTpQN7w&usqp=CAU"
+                alt=""> </button>
+    </div>
+    <div class='row'>
+        <div *ngFor="let item of data"
+            class=' mx-auto mt-5 mx-2 card col-md-3 col-lg-3 col-sm-12 p-3 mb-5 rounded px-3 py-3'>
+            <div class="image-container">
+                <img class='mx-auto rounded' [src]="item.image" />
+            </div>
+            <h4 class='text-center mt-4 py-2'>{{item.text}}</h4>
+            <p class='mt-2 text-center'>{{item.body}}</p>
+            <button *ngIf="!item.count" (click)="addToCart(item)" class='butt mx-5'><span class='span'></span> Add to
+                Cart </button>
+            <div *ngIf="item.count" class="d-flex justify-content-center my-1">
+                <button (click)="decrease(item)" class='small_btn'><span class='span'></span> - </button>
+                <span class="mx-3">{{item.count}}</span>
+                <button (click)="increase(item)" class='small_btn'><span class='span'></span> + </button>
+            </div>
+        </div>
+    </div>
+    <app-loader [showLoader]="loader"></app-loader>
+</div>
